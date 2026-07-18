@@ -1,0 +1,768 @@
+/* ================= HEADER ================= */
+
+.header{
+
+    position:fixed;
+    top:20px;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    transition:.35s ease;
+
+}
+
+.header.scrolled{
+
+    top:10px;
+
+}
+
+.header.scrolled .container{
+
+    background:#1B4332;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 12px 35px rgba(0,0,0,.18);
+
+    padding:12px 24px;
+
+}
+
+.header .container{
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:18px;
+
+    padding:16px 24px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    transition:.35s ease;
+
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:white;
+
+    font-family:var(--title);
+
+    font-weight:700;
+
+    font-size:1.25rem;
+}
+
+.logo svg{
+
+    width:28px;
+
+    height:28px;
+
+    stroke-width:2.2;
+
+}
+
+nav{
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:500;
+
+    position:relative;
+
+    transition:.25s;
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:white;
+
+    transition:.3s;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+nav a:hover{
+    opacity:.75;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+
+    position:relative;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background-image:url("../images/Camping Valea Ierii.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+        rgba(12,25,18,.55),
+
+        rgba(18,45,30,.55)
+
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    width:min(700px,90%);
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    animation:fadeUp 1s ease;
+
+}
+
+.hero-date{
+
+    color:white;
+
+    text-transform:uppercase;
+
+    margin-top:15px;
+
+    font-size:.95rem;
+
+    letter-spacing:3px;
+
+    font-weight:500;
+
+    margin-bottom:30px;
+
+    opacity:1;
+
+}
+
+.hero h1{
+    font-family:var(--title);
+    font-size:clamp(2.8rem,6vw,4.5rem);
+    line-height:1;
+    text-shadow:0 8px 30px rgba(0,0,0,.35);
+    margin-bottom:18px;
+}
+
+.hero h2{
+
+    font-family:var(--title);
+
+    font-size:clamp(2.3rem,4.5vw,3.8rem);
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+    color:white;
+
+}
+
+.hero-description{
+
+    font-size:1.25rem;
+
+    line-height:1.8;
+
+    max-width:720px;
+
+    margin:35px auto;
+
+    color:rgba(255,255,255,.9);
+
+    text-shadow:0 3px 12px rgba(0,0,0,.3);
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn-outline{
+
+    background:transparent;
+
+    border:2px solid rgba(255,255,255,.8);
+
+}
+
+.btn-outline:hover{
+
+    background:white;
+
+    color:var(--primary);
+
+}
+
+.btn{
+    display:inline-block;
+    padding:16px 38px;
+    background:linear-gradient(
+        135deg,
+        #43A047,
+        #2E7D32
+        );
+    color:white;
+    text-decoration:none;
+    border-radius:999px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.25);
+}
+
+.scroll-indicator{
+
+    position:absolute;
+
+    bottom:35px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:white;
+
+    font-size:2.8rem;
+    opacity:.75;
+
+    animation:bounce 2s infinite;
+
+    z-index:2;
+
+}
+
+@keyframes bounce{
+
+    0%,20%,50%,80%,100%{
+
+        transform:translate(-50%,0);
+
+    }
+
+    40%{
+
+        transform:translate(-50%,-10px);
+
+    }
+
+    60%{
+
+        transform:translate(-50%,-5px);
+
+    }
+
+}
+
+/* ================= CARD ================= */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ================= CAMPARE ================= */
+
+.section-intro{
+
+    max-width:650px;
+
+    margin:15px auto 50px;
+
+    text-align:center;
+
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+}
+
+.card{
+
+    position:relative;
+
+    background:rgba(255,255,255,.96);
+
+    border-radius:24px;
+
+    padding:35px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(46,125,50,.08);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.06);
+
+    transition:
+        transform .35s,
+        box-shadow .35s;
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:5px;
+
+    background:linear-gradient(
+        90deg,
+        #2E7D32,
+        #81C784
+    );
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+        0 25px 50px rgba(0,0,0,.12);
+}
+
+.card h3{
+
+    font-family:var(--title);
+
+    margin-bottom:15px;
+
+    color:var(--primary);
+
+}
+
+/* ================= PROGRAM ================= */
+
+.timeline{
+
+    list-style:none;
+
+    margin-top:25px;
+
+}
+
+.timeline li{
+
+    padding:16px 0;
+
+    border-bottom:1px solid #ECEFF1;
+
+}
+
+.timeline li:last-child{
+
+    border-bottom:none;
+
+}
+
+.timeline strong{
+
+    color:var(--primary);
+
+    display:inline-block;
+
+    width:70px;
+
+}
+
+/* ================= BAGAJ ================= */
+
+.checklist{
+
+    list-style:none;
+
+    margin-top:20px;
+
+}
+
+.checklist li{
+
+    padding:10px 0;
+
+    border-bottom:1px solid #ECEFF1;
+
+}
+
+.checklist li:last-child{
+
+    border-bottom:none;
+
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    background:#1B4332;
+
+    color:white;
+
+    text-align:center;
+
+    padding:50px 20px;
+
+}
+
+footer p{
+
+    color:rgba(255,255,255,.85);
+
+    margin:8px 0;
+
+}
+
+.footer-divider{
+
+    width:1200px;
+
+    margin:35px auto 25px;
+
+    border:none;
+
+    border-top:1px solid rgba(255,255,255,.18);
+
+}
+
+.footer-copy{
+
+    font-size:.9rem;
+
+    color:rgba(255,255,255,.55);
+
+}
+
+/* ================= ACTIVE MENU ================= */
+
+nav a.active{
+
+    color:#A5D6A7;
+
+}
+
+nav a.active::after{
+
+    width:100%;
+
+}
+
+/* ================= MOBILE MENU ================= */
+
+.menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    color:white;
+    font-size:2rem;
+    cursor:pointer;
+}
+
+
+
+@media (max-width:768px){
+
+    .header{
+        top:10px;
+        left:0;
+        width:100%;
+    }
+
+    .header .container{
+
+        width:95%;
+        margin:auto;
+
+        padding:14px 18px;
+
+        position:relative;
+    }
+
+    .logo{
+
+        font-size:1rem;
+    }
+
+    nav{
+
+        position:absolute;
+
+        top:70px;
+
+        left:0;
+        right:0;
+
+        width:100%;
+
+        display:none;
+
+        flex-direction:column;
+
+        background:#1B4332;
+
+        border-radius:18px;
+
+        padding:20px;
+    }
+
+    nav.open{
+
+        display:flex;
+
+    }
+
+    .menu-toggle{
+
+        display:block;
+
+    }
+
+    .hero{
+
+    min-height:100vh;
+
+    padding:0 20px;
+
+    }
+
+    .hero-content{
+
+        width:100%;
+
+    }
+
+    .hero-date{
+
+        font-size:.9rem;
+
+        letter-spacing:2px;
+
+        margin-bottom:12px;
+
+    }
+
+    .hero h1{
+
+        font-size:2.6rem;
+
+        line-height:1.1;
+
+        margin-bottom:18px;
+
+    }
+
+    .hero h2{
+
+        font-size:1.8rem;
+
+        margin-bottom:18px;
+
+    }
+
+    .hero-description{
+
+        font-size:1.05rem;
+
+        line-height:1.6;
+
+        max-width:320px;
+
+        margin:0 auto;
+
+    }
+
+}
+
+
+
+/* ================= ICONS ================= */
+
+.section h2{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:14px;
+    margin-bottom:18px;
+    letter-spacing:-0.5px;
+}
+
+.section h2 svg{
+
+    width:36px;
+    height:36px;
+    color:var(--primary);
+
+    stroke-width:2.3;
+}
+
+.card h3{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    margin-bottom:18px;
+}
+
+.card h3 svg{
+
+    width:24px;
+    height:24px;
+
+    color:var(--primary);
+
+    stroke-width:2.2;
+
+    flex-shrink:0;
+}
+
+.card h3 small{
+
+    display:block;
+
+    margin-top:4px;
+
+    font-size:.9rem;
+
+    font-weight:500;
+
+    color:#607D8B;
+
+}
+
+
+
+
+.hero h1,
+.hero h2,
+.hero-date,
+.hero-description{
+
+    text-shadow:0 3px 12px rgba(0,0,0,.45);
+
+}
+
+
+.hero-divider{
+
+    width:100%;
+
+    height:2px;
+
+    background:rgba(255,255,255,.9);
+
+    margin:18px 0;
+
+    border-radius:999px;
+
+}

@@ -1,0 +1,29 @@
+:root{
+
+    /* Culori */
+
+    --primary:#2E7D32;
+    --primary-dark:#1B5E20;
+
+    --background:#F5F7F3;
+    --surface:#FFFFFF;
+
+    --text:#263238;
+    --text-light:#ECEFF1;
+
+    --white:#FFFFFF;
+
+    /* Fonturi */
+
+    --title:"Poppins",sans-serif;
+    --text-font:"Inter",sans-serif;
+
+    /* Umbre */
+
+    --shadow:0 10px 30px rgba(0,0,0,.18);
+
+    /* Colțuri */
+
+    --radius:18px;
+
+}
