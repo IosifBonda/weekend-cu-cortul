@@ -72,3 +72,25 @@ window.addEventListener("scroll", () => {
 });
 
 console.log("EVRIKA.");
+
+const reveals = document.querySelectorAll(".reveal");
+
+function reveal() {
+
+    const trigger = window.innerHeight * 0.85;
+
+    reveals.forEach(item => {
+
+        if(item.getBoundingClientRect().top < trigger){
+
+            item.classList.add("active");
+
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll", reveal);
+
+reveal();
