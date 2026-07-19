@@ -143,6 +143,24 @@ nav a:hover{
     background-position:center;
     background-repeat:no-repeat;
 
+    animation:heroZoom 7s ease-in-out infinite alternate;
+
+}
+
+@keyframes heroZoom{
+
+    from{
+
+        background-size:100%;
+
+    }
+
+    to{
+
+        background-size:108%;
+
+    }
+
 }
 
 .overlay{
@@ -437,6 +455,8 @@ nav a:hover{
 
     gap:25px;
 
+    align-items:stretch;
+
 }
 
 .card{
@@ -459,6 +479,10 @@ nav a:hover{
     transition:
         transform .35s,
         box-shadow .35s;
+
+    display:flex;
+
+    flex-direction:column;
 }
 
 .reveal .card{
@@ -863,4 +887,81 @@ nav a.active::after{
 
     border-radius:999px;
 
+}
+
+/* ================= LOCATION ================= */
+
+.location-card{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.card-icon{
+    width:36px;
+    height:36px;
+    color:var(--primary);
+    margin-bottom:0;      /* era 18px */
+    vertical-align:middle;
+}
+
+.location-link{
+
+    margin-top:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    width:fit-content;
+
+    align-self:center;
+
+    padding:10px 16px;
+
+    border:2px solid var(--primary);
+
+    border-radius:12px;
+
+    color:var(--primary);
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    font-size:.95rem;
+
+}
+
+.location-link svg{
+    flex-shrink:0;
+}
+
+.location-link:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+    transform:translateY(-2px);
+
+}
+
+.location-link:hover svg{
+
+    color:white;
+
+}
+
+.location-card h3{
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
